@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Loja Esportiva</title>
+</head>
+<body>
+    <h1>Produtos da Loja Esportiva</h1>
+    <ul>
+        {% for produto in produtos %}
+            <li>
+                <strong>{{ produto.nome }}</strong><br>
+                Descrição: {{ produto.descricao }}<br>
+                Preço: R$ {{ produto.preco }}<br>
+                Estoque: {{ produto.estoque }}<br>
+                Categoria: {{ produto.categoria }}<br>
+            </li>
+            <hr>
+        {% empty %}
+            <li>Não há produtos cadastrados no momento.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
